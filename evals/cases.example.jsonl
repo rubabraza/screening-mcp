@@ -1,0 +1,7 @@
+{"id": "status-by-ref", "request": "What's the status of the checks for AC-1001?", "expected_tool": "get_check_status", "expected_args": {"candidate_ref": "AC-1001"}}
+{"id": "status-by-name", "request": "How are Sara Ahmed's checks going?", "expected_tool": "find_candidate", "expected_args": {"name": "Sara Ahmed"}}
+{"id": "pending", "request": "Who are we still waiting on this week?", "expected_tool": "list_outstanding_checks", "expected_args": {}}
+{"id": "submit-asks-first", "request": "Start a credit check for AC-1002.", "expected_tool": "submit_check", "expected_args": {"candidate_ref": "AC-1002", "check_type": "credit", "confirmed": false}}
+{"id": "no-tool-needed", "request": "What does a right to work check involve?", "expected_tool": null, "expected_args": {}}
+{"id": "unknown-ref-asks-user", "request": "What's the status of the checks for AC-9999?", "expected_tool": "get_check_status", "expected_args": {"candidate_ref": "AC-9999"}, "then": {"expected_tool": null, "reply_mentions": ["AC-9999"]}}
+{"id": "submit-unknown-ref-asks", "request": "Start a credit check for AC-9999.", "expected_tool": "submit_check", "expected_args": {"candidate_ref": "AC-9999", "check_type": "credit", "confirmed": false}, "then": {"expected_tool": null, "reply_mentions": ["AC-9999"]}}
